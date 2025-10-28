@@ -1,5 +1,5 @@
 ---
-- name: my first play
+- name: my first play added in  vscode
   hosts: workstation.lab.example.com
 
   tasks:
