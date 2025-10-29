@@ -1,0 +1,13 @@
+---
+- name: test out strings
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    ansible.builtin.copy:
+      content: |
+        this content has some 
+        newlines added in 
+        just for checking
+      dest: /tmp/test.txt
+...
