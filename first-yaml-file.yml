@@ -9,10 +9,10 @@
         msg: this is a message from my first task in my first play
 
 - tasks:
-- name: my first task in my second play
-  ansible.builtin.copy:
-    dest: /tmp/test.txt
-    content: this is a message from my first task in my second play
+    - name: my first task in my second play
+      ansible.builtin.copy:
+        dest: /tmp/test.txt
+        content: this is a message from my first task in my second play
  
   hosts: all
   gather_facts: false
