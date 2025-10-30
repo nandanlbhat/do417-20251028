@@ -1,0 +1,15 @@
+---
+- name: show the loop usage
+  hosts: myhosts
+  gather_facts: false
+
+  tasks:
+    - name: show value of the loop item
+      ansible.builtin.debug:
+        msg: this item is {{ item }}
+      loop:
+        - first
+        - second
+        - 10
+        - True
+...
