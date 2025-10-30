@@ -1,0 +1,16 @@
+---
+- name: try handlers
+  hosts: myhosts
+
+  tasks:
+    - name: make a change to call a handler
+      ansible.builtin.copy:
+        content: test text
+        dest: /tmp/test.txt
+      notify: my_handler
+
+  handlers:
+    - name: my_handler
+      ansible.builtin.debug:
+        msg: the file /tmp/test.txt was modified
+...
