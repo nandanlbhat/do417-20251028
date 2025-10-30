@@ -9,10 +9,16 @@
       - second
       - 10
       - True
+    my_conditional_var: True
 
   tasks:
-    - name: show value of the loop item
+    #- name: show value of the loop item
+    #  ansible.builtin.debug:
+    #    msg: this item is {{ item }}
+    #  loop: "{{ my_loop_var }}"
+
+    - name: conditionally show something
       ansible.builtin.debug:
-        msg: this item is {{ item }}
-      loop: "{{ my_loop_var }}"
+        msg: my_conditional_var is {{ my_conditional_var }}
+      when: my_conditional_var = True
 ...
