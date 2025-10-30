@@ -3,6 +3,14 @@
   hosts: myhosts
   gather_facts: false
 
+  vars:
+    my_loop_var:
+      - first
+      - second
+      - 10
+      - True
+    my_conditional_var: True
+
   tasks:
     #- name: show value of the loop item
     #  ansible.builtin.debug:
@@ -17,4 +25,5 @@
     - name: fail with a message
       ansible.builtin.fail:
         msg: task failed successfully
+      when: "'second' in my_loop_var"
 ...
