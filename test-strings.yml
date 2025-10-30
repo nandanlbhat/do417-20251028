@@ -4,10 +4,10 @@
   gather_facts: false
 
   tasks:
-    ansible.builtin.copy:
-      content: |
-        this content has some 
-        newlines added in 
-        just for checking
-      dest: /tmp/test.txt
+    - ansible.builtin.copy:
+        content: >-
+          this content is supposed
+          to have some
+          newlines
+        dest: /tmp/test.txt
 ...

@@ -1,0 +1,9 @@
+---
+- name: show facts collected
+  hosts: workstation.lab.example.com
+  
+  tasks:
+    - name: show collected facts
+      ansible.builtin.debug:
+        var: ansible_facts
+...
