@@ -1,0 +1,20 @@
+---
+- name: try failing
+  hosts: myhosts
+  gather_facts: false
+
+  tasks:
+    #- name: show value of the loop item
+    #  ansible.builtin.debug:
+    #    msg: this item is {{ item }}
+    #  loop: "{{ my_loop_var }}"
+
+    #- name: conditionally show something
+    #  ansible.builtin.debug:
+    #    msg: my_conditional_var is {{ my_conditional_var }}
+    #  when: my_conditional_var == True
+
+    - name: fail with a message
+      ansible.builtin.fail:
+        msg: task failed successfully
+...
