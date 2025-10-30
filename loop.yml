@@ -20,5 +20,5 @@
     - name: conditionally show something
       ansible.builtin.debug:
         msg: my_conditional_var is {{ my_conditional_var }}
-      when: my_conditional_var = True
+      when: my_conditional_var == True
 ...
