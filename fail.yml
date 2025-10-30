@@ -21,9 +21,13 @@
     #  ansible.builtin.debug:
     #    msg: my_conditional_var is {{ my_conditional_var }}
     #  when: my_conditional_var == True
+    - name: read contents of /tmp/test.txt
+      ansible.builtin.command:
+        cmd: cat /tmp/test.txt
+      register: cmd_output
 
     - name: fail with a message
       ansible.builtin.fail:
         msg: task failed successfully
-      when: "'second' in my_loop_var"
+      when: "'test' in cmd_output['stdout']"
 ...
