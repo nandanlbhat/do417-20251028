@@ -3,13 +3,16 @@
   hosts: myhosts
   gather_facts: false
 
+  vars:
+    my_loop_var:
+      - first
+      - second
+      - 10
+      - True
+
   tasks:
     - name: show value of the loop item
       ansible.builtin.debug:
         msg: this item is {{ item }}
-      loop:
-        - first
-        - second
-        - 10
-        - True
+      loop: "{{ my_loop_var }}"
 ...
