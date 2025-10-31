@@ -2,6 +2,11 @@
 - name: try to use a role to display a greeting
   hosts: myhosts
 
+  tasks:
+    - name: try running a task before a role
+      ansible.builtin.debug:
+        msg: did this run before the role?
+
   roles:
     - role: student.test
       # greeting_var: hi everybody
