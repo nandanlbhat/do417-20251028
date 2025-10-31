@@ -4,5 +4,5 @@
 
   roles:
     - role: student.test
-      greeting_var: hi everybody
+      # greeting_var: hi everybody
 ...
