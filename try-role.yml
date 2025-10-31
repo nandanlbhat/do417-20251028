@@ -1,0 +1,8 @@
+---
+- name: try to use a role to display a greeting
+  hosts: myhosts
+
+  roles:
+    - role: student.test
+      greeting_var: hi everybody
+...

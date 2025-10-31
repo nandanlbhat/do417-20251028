@@ -1,0 +1,5 @@
+---
+- name: display a greeting
+  ansible.builtin.debug:
+    msg: "{{ greeting_var }}"
+...
